@@ -1,0 +1,10 @@
+prod=input("Please write your item name:")
+price=input("What is the unit price?:")
+qty=input("How many did you buy/:")
+amount=float(price)*int(qty)
+tax=amount/100*15
+print("Here is your final bill")
+print("Item -",prod)
+print("Amount - £",int(amount))
+print("VAT - £",float(tax))
+print("Total - £",int(amount)+float(tax))
