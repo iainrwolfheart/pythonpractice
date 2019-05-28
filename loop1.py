@@ -1,6 +1,7 @@
-mult=int(input("Which times table shall we look at? "))
-upto=int(input("How far up shall we go?" ))
 a=1
-while a<=upto:
-	print(mult,"x",a,"=",(mult*a))
-	a=a+1
+while a<=10:
+	b=1
+	while b<=10:
+		print(b)
+		b+=1
+	a+=1
