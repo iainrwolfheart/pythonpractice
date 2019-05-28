@@ -1,8 +1,8 @@
 import random
 rps=["rock", "paper", "scissors"]
 computer=rps[random.randint(0,2)]
-go=="y"
-while go=="y"
+go="y"
+while go=="y":
 	player=input("Choose rock, paper or scissors - ")
 	if player==computer:
 		print("It's a tie!")
@@ -24,4 +24,4 @@ while go=="y"
 	else:
 		print("That's not one of the choices, sadly.")
 	go=input("Would you like to play again? y/n - ")
-("Thank you for playing!")
+print("Thank you for playing!")
