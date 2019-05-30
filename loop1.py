@@ -1,10 +1,11 @@
-msg=input("Write stuff here")
+msg=input("Write a sentence and I'll repeat: ")
 i=0
-wordcount=0
 word=""
-while i<=len(msg):
+while i<len(msg):
 	if msg[i]==" ":
-		wordcount=wordcount+1
-		i+=1
+		print(word)
+		word=""
+	else:
+		word=word+msg[i]
 	i+=1
-print(wordcount)
+print(word)

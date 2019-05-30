@@ -12,4 +12,106 @@ upto=int(input("How far up shall we go?" ))
 a=1
 while a<=upto:
 	print(mult,"x",a,"=",(mult*a))
-	a=a+1
+	a+=1
+_
+a=1
+while a<=10:
+	if a%2==0:
+		print(a,"is even")
+	else:
+		print(a,"is odd")
+	a+=1
+_
+NESTED LOOPS
+a=1
+while a<=10:
+	b=1
+	while b<=10:
+		print(b)
+		b+=1
+	a+=1
+_
+a=1
+while a<=10:
+	b=1
+	while b<=a:
+		print(a)
+		b+=1
+	a+=1
+_
+INTRODUCING SUB-STRING COUNTS AND LENGTH
+msg=input("Enter a message:")
+i=0
+while i<len(msg):
+	print(msg[i])
+	i+=1
+_
+WORD COUNT FUNCTION
+space=0
+msg=(input("Write a sentence here:"))
+c=0
+while c<len(msg):
+	if msg[c]==" ":
+		space=space+1
+	c+=1
+print("There are",(space+1),"words in your sentence.")
+_
+PRINTING IN REVERSE
+msg=input("Enter a message:")
+i=(len(msg)-1)
+while i>=0:
+	print(msg[i])
+	i-=1
+_
+COUNTING LETTERS IN AN INPUT
+msg=input("Enter stuff:")
+cha=input("Which letter shall we count?")
+i=0
+charcount=0
+while i<len(msg):
+	if msg[i]==cha:
+		charcount=charcount+1
+	i+=1
+print("You looking for",cha, "There's this many -", charcount)
+_
+RECOGNISING WORDS AND PRINTING ON SEPARATE LINES
+msg=input("Enter stuff:")
+word=""
+i=0
+while i<len(msg):
+	if msg[i]==" ":
+		print(word)
+		word=""
+	else:
+		word=word+msg[i]
+	i=i+1
+print(word)
+_
+PRINTING WORDS ON SEPARATE LINES... BACKWARD
+	msg=input("Enter stuff:")
+word=""
+i=len(msg)-1
+while i>=0:
+	if msg[i]==" ":
+		print(word)
+		word=""
+	else:
+		word=msg[i]+word
+	i=i-1
+print(word)
+_
+COUNTING OCCURENCES OF A CHOSEN WORD IN A STRING
+msg=input("Write stuff here")
+find=input("Which word shall we look for?")
+f=0
+i=0
+while i<len(msg):
+	if msg[i:i+len(find)]==find:
+		f=f+1
+		i=i+len(find)-1
+	i=i+1
+print(f)
+
+
+
+
