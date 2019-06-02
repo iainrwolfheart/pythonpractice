@@ -111,7 +111,428 @@ while i<len(msg):
 		i=i+len(find)-1
 	i=i+1
 print(f)
+_
+REVERSING WORDS BUT NOT ORDER
+def Reverse(word):
+	newword=""
+	i=len(word)-1
+	while i>=0:
+		newword+=word[i]
+		i-=1
+	return newword
 
+msg=input("Write you message for reversal")
+newmsg=""
+word=""
+i=0
+while i<len(msg):
+	if msg[i]==" ":
+		newmsg+=(Reverse(word)+" ")
+		word=""
+	else:
+		word+=msg[i]
+	i+=1
 
+print(newmsg,Reverse(word))
+_________________________________________________
+PROCEDURES & FUNCTIONS
 
+SIMPLE PROCEDURE
+def msg():
+	print("Hello")
+	print("my")
+	print("friends.")
+msg()
+_
+def addition(a,b):
+	Result=a+b
+	print(Result)
+
+addition(3,6)
+_
+SALARY CALCULATOR FUNCTION
+def Tax(salary):
+	if salary>=20000:
+		tax=salary/100*20
+	if salary in range(12500,19999):
+		tax=salary/100*15
+	else:
+		tax=0
+	return tax
+
+salary=int(input("What is your salary? "))
+print("Your tax is", Tax(salary))
+print("Your net salary is",salary-Tax(salary))
+_
+IMPORT FUNCTION 
+from ProcFunc import Tax ('Tax' is name of function, 'ProcFunc' is it's location)
+_
+WORDCOUNT FUNCTION
+def wordcount(message):
+	word=1
+	i=0
+	while i<len(message):
+		if message[i]==" ":
+			word+=1
+		i+=1
+	return word
+
+words=input("Write something: ")
+print("Number of words: ",wordcount(words))
+_
+CALLING ASCII CODE TO ASCERTAIN IF UPPER/LOWER/NUMERIC (Upper(65,90), Lower(97,122), Numeric(48,57))
+alpha=input("Enter any character")
+if ord(alpha)>=65 and ord(alpha)<=90:
+	print("This is upper case")
+else:
+	if ord(alpha)>=97 and ord(alpha)<=122:
+		print("This is lower case")
+	else:
+		if ord(alpha)>=48 and ord(alpha)<=57:
+			print("This is numeric")
+		else:
+			print("This is neither a letter or a number")
+_
+CONVERT UPPER TO LOWER AND VICE VERSA
+alpha=input("Enter any character: ")
+if ord(alpha)>=65 and ord(alpha)<=90:
+	print(chr(ord(alpha)+32))
+else:
+	if ord(alpha)>=97 and ord(alpha)<=122:
+		print(chr(ord(alpha)-32))
+	else:
+		if ord(alpha)>=48 and ord(alpha)<=57:
+			print("This is numeric")
+		else:
+			print("This is neither a letter or a number")
+_
+INCOMPLETE ATTEMPT TO CONVERT INITIAL LETTER ONLY TO UPPER CASE
+alpha=input("Enter your name: ")
+if ord(alpha[0])>=65 and ord(alpha[0])<=90:
+	print("You wrote your name correctly")
+else:
+	if ord(alpha[0])>=97 and ord(alpha[0])<=122:
+		print(chr(ord(alpha[0])-32),alpha in range[1,len(alpha)])
+	else:
+		print("This is neither a letter or a number")
+_
+THE BEGINNINGS OF PASSWORD CONVERSION
+password=input("Enter your password: ")
+
+def convert(password):
+	i=0
+	con=""
+	while i<len(password):
+		if ord(password[i])>=65 and ord(password[i])<=90:
+			con=con+chr(ord(password[i])+32)
+		else:
+			if ord(password[i])>=97 and ord(password[i])<=122:
+				con=con+chr(ord(password[i])-32)
+			else:
+				if ord(password[i])>=48 and ord(password[i])<=57:
+					con=con+str(int(password[i])*2)
+				else:
+					con=con+(password[i])
+		i+=1
+	return con
+
+print("Your password has been converted: ", convert(password))
+_
+CONVERTING GIVEN NUMERICS INTO CHARACTERS
+num=int(input("Input number"))
+
+def ones(num):
+	tho=""
+	if num==1:
+		tho="one"
+	if num==2:
+		tho="two"
+	if num==3:
+		tho="three"
+	if num==4:
+		tho="four"
+	if num==5:
+		tho="five"
+	if num==6:
+		tho="six"
+	if num==7:
+		tho="seven"
+	if num==8:
+		tho="eight"
+	if num==9:
+		tho="nine"
+	if num==10:
+		tho="ten"
+	if num==11:
+		tho=="eleven"	
+	elif num==12:
+		tho="twelve"
+	elif num==13:
+		tho="thirteen"
+	elif num==14:
+		tho="fourteen"
+	elif num==15:
+		tho="fifteen"
+	elif num==16:
+		tho="sixteen"
+	elif num==17:
+		tho="seventeen"
+	elif num==18:
+		tho="eighteen"
+	elif num==19:
+		tho="nineteen"
+	return tho
+
+def tens(num):
+	dou=""
+	if num==20:
+		dou="twenty"
+	if num==30:
+		dou="thirty"
+	if num==40:
+		dou="forty"
+	if num==50:
+		dou="fifty"
+	if num==60:
+		dou="sixty"
+	if num==70:
+		dou="seventy"
+	if num==80:
+		dou="eighty"
+	if num==90:
+		dou="ninety"
+	return dou
+
+answer=""
+if num>=10000:
+	print("Error on input")
+else:
+	if num>=1000 and num<=9999:
+		answer+=ones(int(num/1000))+" thousand "
+		num=num%1000
+	if num>=100:
+		answer+=ones(int(num/100))+" hundred and "
+		num=num%100
+	if num>=20:
+		answer+=tens(int(num/10)*10)+" "
+		num=num%10
+	if num>0 and num<20:
+		answer+=ones(num)
+
+	print(answer)
+__________________________
+NESTED FUNCTIONS
+def operations(day):
+	if day==1:
+		def fun(a,b):
+			c=a+b
+			print("The result is",c)
+	if day==2:
+		def fun(a,b):
+			c=a-b
+			print("The result is",c)
+	return fun
+iain=operations(2) --- This line calls the outer function and defines which inner function is used in the brackets
+iain(2,3) --- This line inputs the values to be processed in inner function
+_
+... USING STRING INPUTS
+def operations(day):
+	if day=="monday":
+		def fun(a,b):
+			c=a+b
+			print("The result is",c)
+	if day=="tuesday":
+		def fun(a,b):
+			c=a-b
+			print("The result is",c)
+	return fun
+iain=operations("tuesday")
+iain(2,3)
+_
+SENDING A SELECTED FUNCTION TO ANOTHER FUNCTION
+def add(a,b):
+	c=a+b
+	print("The result is",c)
+def sub(a,b):
+	c=a-b
+	print("The result is",c)
+
+def ops(fun,y,z):
+	fun(y,z)
+
+ops(add,10,20)
+_
+def add(a,b):
+	c=a+b
+	print("The add result is",c)
+def sub(a,b):
+	c=a-b
+	print("The sub result is",c)
+
+def ops(fun,y,z): ---  'fun' can be named anything but relates to the function to be called
+	fun(y,z)
+
+ops(sub,10,20) --- define the function, then the values to be passed
+ops(add,40,50)
+_
+DEFAULT FUNCTION VALUES
+def Tax(salary, tax=21):
+	incometax=salary/100*tax
+	print("Your tax amount is £",incometax)
+
+Tax(2000)
+Tax(2000,27) --- THIS WILL OVERRIDE THE DEFAULT VALUE ASSIGNED TO 'TAX' IN THE FUNCTION
+_
+def multiadd(a=10,b=20,c=30,d=40):
+	result=a+b+c+d
+	print("The multiadd result is",result)
+
+multiadd() --- THIS CALLS THE FUNCTION USING ONLY DEFAULT VALUES
+multiadd(b=30) --- THIS OVERRIDES ONLY SELECTED VALUES IN THE FUNCTION
+_______
+FUNCTION TO FIND THE LONGEST WORD
+biggest=input("Hello my friends and how are you?")
+
+def count(biggest):
+	i=0
+	word=""
+	large=""
+	while i<len(biggest):
+		if biggest[i]==" ":
+			if len(word)>len(large):
+				large=word
+			word=""
+		else:
+			word+=biggest[i]
+		i+=1
+	if len(word)>len(large):
+		large=word
+	return large
+
+print("The biggest word is",count(biggest))
+____________
+LISTS
+numbers=[202,71,10]
+members=["Bob", "Dave", "Jason"]
+i=0
+l=0
+while i<=2:
+	print(numbers[i], members[l])
+	i+=1
+	l+=1
+_
+INTRODUCING BREAK FUNCTION
+numbers=[]
+while True:
+	num=int(input("Enter any number: "))
+	if num==0:
+		break
+	else:
+		numbers.append(num)
+_
+FINDING THE HIGHEST VALUE IN A LIST
+numbers=[3,43,19,50]
+highest=numbers[0]
+i=1
+while i<len(numbers):
+	if numbers[i]>highest:
+		highest=numbers[i]
+	i+=1
+print("The highest number in the list is",highest)
+_
+CREATING A LIST, ADDING TO- AND COUNTING INSTANCES OF IT'S CONTENT
+alpha=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+msg=input("Insert a message with only capital letters here: ")
+i=0
+while i<len(msg):
+	alpha[ord(msg[i])-65]+=1
+	i+=1
+
+c=0
+while c<25:
+	if alpha[c]>0:
+		print(chr(c+65),"=",alpha[c])
+	c+=1
+___________
+EXCEPTIONS
+try:
+	price=int(input("How much is the bill?"))
+	paid=int(input("How much money is given?"))
+	change=paid-price
+	fifty=change//50
+	twenty=change%50//20
+	ten=change%50%20//10
+	five=change%50%20%10//5
+	two=change%50%20%10%5//2
+	one=change%50%20%10%5%2//1
+	print("The breakdown of change is as follows..;")
+	if fifty>0:
+		print("£50 notes -",fifty)
+	if twenty>0:
+		print("£20 notes -",twenty)
+	if ten>0:
+		print("£10 notes -",ten)
+	if five>0:
+		print("£5 notes -",five)
+	if two>0:
+		print("£2 coins -",two)
+	if one>0:
+		print("£1 coins -",one)
+
+except ValueError as error:
+	print("Please enter numerals only")
+except Exception as error:
+	print("What are you doing!?")
+finally:
+	print("Numpty")
+_____________
+OPENING A FILE AND PROCESSING ELEMENTS
+
+READ-ONLY
+myfriend=open("Opentest.txt","r")
+for x in myfriend:
+	print(x)
+_
+USING END="" TO PREVENT EXTRA SPACING WHEN COPYING
+File_Read=open("Opentest.txt","r")
+File_Write=open("Opentest2.txt","w")
+
+for x in File_Read:
+	print(x,file=File_Write,end="")
+_
+REPLACING SELECTED CHARACTERS WITH OTHER CHARACTERS
+File_Read=open("Opentest.txt","r")
+
+for x in File_Read:
+	for ch in x:
+		if ch=="e":
+			print("*",end="")
+		else:print(ch,end="")
+_
+REPLACING SELECTED CHARACTERS WITH OTHER CHARACTERS INTO ANOTHER TEXT FILE
+File_Read=open("Opentest.txt","r")
+File_Write=open("Opentest2.txt","w")
+
+for x in File_Read:
+	for ch in x:
+		if ch=="e":
+			print("*",file=File_Write,end="")
+		else:
+			print(ch,file=File_Write,end="")
+_
+REPLACING WORDS INTO ANOTHER TEXT FILE
+File_Read=open("Opentest.txt","r")
+File_Write=open("Opentest2.txt","w")
+find=input("Which word are we replacing? ")
+
+for x in File_Read:
+	i=0
+	while i<len(x):
+		if x[i:i+len(find)]==find:
+			print("***",file=File_Write,end="")
+			i+=len(find)-1
+		else:
+			print(x[i],file=File_Write,end="")
+		i+=1	
+		
 

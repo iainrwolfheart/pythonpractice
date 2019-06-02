@@ -1,20 +1,21 @@
-ones=["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",
-"thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
-tens=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
+biggest=input("Hello my friends and how are you?")
 
-num=int(input("Give me a number between 0 and 9999: "))
+def count(biggest):
+	i=0
+	word=""
+	large=""
+	while i<len(biggest):
+		if biggest[i]==" ":
+			if len(word)>len(large):
+				large=word
+				word=""
+			else:
+				word=""
+		else:
+			word+=biggest[i]
+		i+=1
+	if len(word)>len(large):
+		large=word
+	return large
 
-answer=""
-
-if num>=1000 and num<10000:
-	answer+=ones[int(num/1000)]+" thousand "
-	num=num%1000
-if num>=100:
-	answer+=ones[int(num/100)]+" hundred "
-	num=num%100
-if num>=20:
-	answer+=tens[int(num/10)]+" "
-	num=num%10
-if num>0 and num<=19:
-	answer+=ones[int(num)]
-print(answer)
+print("The biggest word is",count(biggest))
