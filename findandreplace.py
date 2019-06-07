@@ -5,12 +5,12 @@ i=0
 first=""
 send=""
 for i in write:
-	if write(i:i+len(word))==word:
-		if first!=word:
-			first+=word[i]
-			send+=word[i]
+	if write[i:i+len(word)]==word:
+		if first=="":
+			first+=word
+			send+=word
 		else:
-			send+=word[i]
+			send+=write[i]
 	else:
-		send+=word[i]
+		send+=write[i]
 print(send)

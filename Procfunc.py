@@ -8,9 +8,7 @@ def count(biggest):
 		if biggest[i]==" ":
 			if len(word)>len(large):
 				large=word
-				word=""
-			else:
-				word=""
+			word=""
 		else:
 			word+=biggest[i]
 		i+=1

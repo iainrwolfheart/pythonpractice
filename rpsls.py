@@ -1,6 +1,6 @@
 import random
 rps=["rock", "paper", "scissors", "lizard", "spock"]
-computer=rps[random.randint(0,2)]
+computer=rps[random.randint(0,4)]
 player=input("Choose rock, paper, scissors, lizard or spock - ")
 if player==computer:
 	print("It's a tie, what are the chances!")
